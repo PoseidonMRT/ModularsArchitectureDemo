@@ -13,6 +13,11 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
     buildTypes {
         release {
@@ -27,6 +32,16 @@ dependencies {
     implementation Deps.kotlin_stdlib
     implementation Deps.appcompat_v7
     implementation Deps.constraint_layout
+
+    implementation Deps.dagger2
+    annotationProcessor Deps.dagger2Compiler
+
+    implementation Deps.rxjava2
+    implementation Deps.rxandroid
+
+    implementation Deps.arouterApi
+    annotationProcessor Deps.arouterCompiler
+
     testImplementation Deps.junit
     androidTestImplementation Deps.test_runner
     androidTestImplementation Deps.espresso
