@@ -13,7 +13,7 @@ object Versions{
     val constraint_layout = "1.1.3"
 
     val compileSdkVersion = 28
-    val minSdkVersion = 15
+    val minSdkVersion = 16
 
     //test
     val junit = "4.12"
@@ -26,6 +26,8 @@ object Versions{
 
     val arouterApi = "1.4.1"
     val arouterCompiler = "1.2.2"
+
+    val lottie = "2.7.0"
 }
 
 object Deps{
@@ -51,4 +53,6 @@ object Deps{
 
     val arouterApi = "com.alibaba:arouter-api:${Versions.arouterApi}"
     val arouterCompiler = "com.alibaba:arouter-compiler:${Versions.arouterCompiler}"
+
+    val lottie = "com.airbnb.android:lottie:${Versions.lottie}"
 }

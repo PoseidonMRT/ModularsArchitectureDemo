@@ -42,6 +42,8 @@ dependencies {
     implementation Deps.arouterApi
     annotationProcessor Deps.arouterCompiler
 
+    implementation Deps.lottie
+
     testImplementation Deps.junit
     androidTestImplementation Deps.test_runner
     androidTestImplementation Deps.espresso
