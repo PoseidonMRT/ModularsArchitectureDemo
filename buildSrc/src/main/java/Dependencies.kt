@@ -56,3 +56,7 @@ object Deps{
 
     val lottie = "com.airbnb.android:lottie:${Versions.lottie}"
 }
+
+object ModuleBuildType{
+    val isBuildModuleOnly = true
+}
