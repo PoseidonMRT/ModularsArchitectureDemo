@@ -54,6 +54,7 @@ dependencies {
 
     annotationProcessor Deps.lifecycleCompiler
 
+    implementation Deps.recyclerView
     implementation Deps.appcompat_v7
     implementation Deps.constraint_layout
     testImplementation Deps.junit

@@ -33,7 +33,7 @@
         <View
                 android:id="@+id/weather_main_divider"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/weather_dp4"
+                android:layout_height="@dimen/weather_dp3"
                 android:background="@color/weather_color_79b8df"
                 android:layout_marginLeft="@dimen/weather_dp16"
                 android:layout_marginRight="@dimen/weather_dp16"
@@ -99,7 +99,8 @@
                 android:textColor="@color/weather_color_ffffff"
                 android:textSize="@dimen/weather_text_size_25"/>
     </RelativeLayout>
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/weather_forecast_list"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@color/weather_color_ffffff"
@@ -108,5 +109,5 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHeight_percent="0.4"
             app:layout_constraintWidth_percent="1"
-    ></ListView>
+    ></androidx.recyclerview.widget.RecyclerView>
 </androidx.constraintlayout.widget.ConstraintLayout>

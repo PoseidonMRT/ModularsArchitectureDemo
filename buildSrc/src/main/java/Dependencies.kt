@@ -31,6 +31,8 @@ object Versions{
     val arouterCompiler = "1.2.2"
 
     val lottie = "2.7.0"
+
+
 }
 
 object Deps{
@@ -39,6 +41,7 @@ object Deps{
     val kotlin_gradle_plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
     val kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
     val appcompat_v7 = "com.android.support:appcompat-v7:${Versions.appcompat_v7}"
+    val recyclerView = "com.android.support:recyclerview-v7:${Versions.appcompat_v7}"
     val constraint_layout = "com.android.support.constraint:constraint-layout:${Versions.constraint_layout}"
 
     val junit = "junit:junit:${Versions.junit}"
