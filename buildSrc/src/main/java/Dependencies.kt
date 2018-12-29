@@ -15,7 +15,7 @@ object Versions{
     val lifecycle = "2.0.0"
 
     val compileSdkVersion = 28
-    val minSdkVersion = 16
+    val minSdkVersion = 17
     val targetSdkVersion = 28
 
     //test

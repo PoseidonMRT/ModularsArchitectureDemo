@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="weather_dp90">90dp</dimen>
+    <dimen name="weather_text_size_15">15sp</dimen>
+    <dimen name="weather_text_size_20">20sp</dimen>
+    <dimen name="weather_text_size_25">25sp</dimen>
+    <dimen name="weather_text_size_30">30sp</dimen>
+    <dimen name="weather_text_size_40">40sp</dimen>
+    <dimen name="weather_dp20">20dp</dimen>
+    <dimen name="weather_dp2">2dp</dimen>
+    <dimen name="weather_dp150">150dp</dimen>
+    <dimen name="weather_dp4">4dp</dimen>
+    <dimen name="weather_dp8">8dp</dimen>
+    <dimen name="weather_dp5">5dp</dimen>
+    <dimen name="weather_dp16">16dp</dimen>
+    <dimen name="weather_dp120">120dp</dimen>
+    <dimen name="weather_dp260">260dp</dimen>
+</resources>
