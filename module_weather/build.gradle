@@ -5,15 +5,15 @@ if (ModuleBuildType.isBuildModuleOnly) {
 }
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion Versions.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 28
+        minSdkVersion Versions.minSdkVersion
+        targetSdkVersion Versions.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
 
@@ -34,6 +34,10 @@ android {
             }
         }
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 android {
@@ -43,9 +47,16 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation Deps.lifecycle_extension
+    implementation Deps.lifecycle_runtime
+    implementation Deps.viewModel
+    implementation Deps.liveData
+
+    annotationProcessor Deps.lifecycleCompiler
+
+    implementation Deps.appcompat_v7
+    implementation Deps.constraint_layout
+    testImplementation Deps.junit
+    androidTestImplementation Deps.test_runner
+    androidTestImplementation Deps.espresso
 }

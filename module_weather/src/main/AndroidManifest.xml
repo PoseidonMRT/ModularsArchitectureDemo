@@ -3,7 +3,7 @@
           package="com.example.module_weather">
 
     <application>
-        <activity android:name=".WeatherMainActivity">
+        <activity android:name=".WeatherMainActivity" android:theme="@style/WeatherAppThemeNoActionBar">
         </activity>
     </application>
 

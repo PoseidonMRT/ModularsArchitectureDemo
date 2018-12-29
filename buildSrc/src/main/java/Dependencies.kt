@@ -12,8 +12,11 @@ object Versions{
     val appcompat_v7 = "28.0.0"
     val constraint_layout = "1.1.3"
 
+    val lifecycle = "2.0.0"
+
     val compileSdkVersion = 28
     val minSdkVersion = 16
+    val targetSdkVersion = 28
 
     //test
     val junit = "4.12"
@@ -55,6 +58,12 @@ object Deps{
     val arouterCompiler = "com.alibaba:arouter-compiler:${Versions.arouterCompiler}"
 
     val lottie = "com.airbnb.android:lottie:${Versions.lottie}"
+
+    val lifecycle_extension = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
+    val lifecycle_runtime = "androidx.lifecycle:lifecycle-runtime:${Versions.lifecycle}"
+    val lifecycleCompiler = "androidx.lifecycle:lifecycle-compiler:${Versions.lifecycle}"
+    val viewModel = "androidx.lifecycle:lifecycle-viewmodel:${Versions.lifecycle}"
+    val liveData = "androidx.lifecycle:lifecycle-livedata:${Versions.lifecycle}"
 }
 
 object ModuleBuildType{
