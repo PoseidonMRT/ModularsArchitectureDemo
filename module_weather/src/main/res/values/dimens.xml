@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="weather_dp90">90dp</dimen>
+    <dimen name="weather_text_size_10">10sp</dimen>
     <dimen name="weather_text_size_15">15sp</dimen>
     <dimen name="weather_text_size_20">20sp</dimen>
     <dimen name="weather_text_size_25">25sp</dimen>
@@ -16,4 +17,7 @@
     <dimen name="weather_dp16">16dp</dimen>
     <dimen name="weather_dp120">120dp</dimen>
     <dimen name="weather_dp260">260dp</dimen>
+    <dimen name="weather_dp10">10dp</dimen>
+    <dimen name="weather_dp40">40dp</dimen>
+    <dimen name="weather_dp50">50dp</dimen>
 </resources>

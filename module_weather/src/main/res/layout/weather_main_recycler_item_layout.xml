@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/weather_dp50"
+        android:layout_margin="@dimen/weather_dp10"
+>
+
+    <TextView
+            android:id="@+id/weather_main_recycler_item_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="星期三"
+            android:gravity="center"
+            android:textColor="@color/weather_color282828"
+    />
+    <ImageView
+            android:id="@+id/weather_main_recycler_item_icon"
+            android:layout_width="@dimen/weather_dp40"
+            android:layout_height="@dimen/weather_dp40"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/weather_vector_drawable_icon_cloudy_black"
+    />
+    <TextView
+            android:id="@+id/weather_main_recycler_item_temperature_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="&#176;C"
+            android:textColor="@color/weather_color282828"
+            android:textSize="@dimen/weather_text_size_10"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginRight="@dimen/weather_dp10"
+            android:layout_marginTop="@dimen/weather_dp8"
+            app:layout_constraintRight_toLeftOf="@id/weather_main_recycler_item_icon"/>
+
+    <TextView
+            android:id="@+id/weather_main_recycler_item_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="4"
+            android:textColor="@color/weather_color282828"
+            android:layout_marginRight="@dimen/weather_dp2"
+            android:textSize="@dimen/weather_text_size_20"
+            app:layout_constraintRight_toLeftOf="@id/weather_main_recycler_item_temperature_sign"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
