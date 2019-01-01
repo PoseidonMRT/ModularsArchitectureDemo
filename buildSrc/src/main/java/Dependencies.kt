@@ -32,7 +32,9 @@ object Versions{
 
     val lottie = "2.7.0"
 
-
+    val retrofit = "2.5.0"
+    val okHttp = "3.12.0"
+    val gson = "2.8.5"
 }
 
 object Deps{
@@ -67,6 +69,12 @@ object Deps{
     val lifecycleCompiler = "androidx.lifecycle:lifecycle-compiler:${Versions.lifecycle}"
     val viewModel = "androidx.lifecycle:lifecycle-viewmodel:${Versions.lifecycle}"
     val liveData = "androidx.lifecycle:lifecycle-livedata:${Versions.lifecycle}"
+
+    val adapter_rxjava = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofit}"
+    val convert_gson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
+    val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    val okHttp = "com.squareup.okhttp3:okhttp:${Versions.okHttp}"
+    val gson = "com.google.code.gson:gson:${Versions.gson}"
 }
 
 object ModuleBuildType{

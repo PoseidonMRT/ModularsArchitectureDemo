@@ -57,6 +57,16 @@ dependencies {
     implementation Deps.viewModel
     implementation Deps.liveData
 
+    implementation Deps.rxjava2
+    implementation Deps.convert_gson
+    implementation Deps.adapter_rxjava
+    implementation Deps.rxandroid
+    implementation Deps.dagger2
+    implementation Deps.retrofit
+    implementation Deps.okHttp
+    implementation Deps.gson
+
+    annotationProcessor Deps.dagger2Compiler
     annotationProcessor Deps.lifecycleCompiler
 
     implementation Deps.recyclerView
