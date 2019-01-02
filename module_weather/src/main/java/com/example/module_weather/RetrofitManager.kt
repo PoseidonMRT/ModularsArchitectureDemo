@@ -14,7 +14,7 @@ class RetrofitManager private constructor() {
     var defaultClient: OkHttpClient? = null
         private set
 
-    val okHttpClientBuilder: OkHttpClient.Builder
+    private val okHttpClientBuilder: OkHttpClient.Builder
         get() {
             val builder = OkHttpClient.Builder()
             builder.connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
@@ -34,10 +34,8 @@ class RetrofitManager private constructor() {
     companion object {
         val instance = RetrofitManager()
 
-        private val CONNECT_TIMEOUT = 30L
-        private val READ_TIMEOUT = 30L
-        private val WRITE_TIMEOUT = 30L
-        private val MAX_CACHE_SIZE = 100 * 1024 * 1024L
-        private val CACHE_NAME = "cache_network"
+        private const val CONNECT_TIMEOUT = 30L
+        private const val READ_TIMEOUT = 30L
+        private const val WRITE_TIMEOUT = 30L
     }
 }

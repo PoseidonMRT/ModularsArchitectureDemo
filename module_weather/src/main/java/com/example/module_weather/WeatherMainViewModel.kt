@@ -21,7 +21,7 @@ class WeatherMainViewModel(private val context: Application, private val dataSou
     var weatherData:ObservableField<ResponseWeatherData> = ObservableField()
 
     fun queryWeatherInfo(){
-        dataSource.queryWeather("成都")
+        (dataSource as WeatherDataSource).queryWeather("成都")
             .subscribe(object: Observer<ResponseMsg<ResponseWeatherData>> {
                 override fun onComplete() {
 

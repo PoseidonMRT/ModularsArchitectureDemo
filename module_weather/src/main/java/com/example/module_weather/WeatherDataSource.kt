@@ -5,6 +5,7 @@ import com.example.module_weather.entity.weather.ResponseWeatherData
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import javax.inject.Inject
 
 /**
  * @author
@@ -12,14 +13,12 @@ import io.reactivex.schedulers.Schedulers
  * @description
  * @since 1.0.0
  */
-class RemoteServiceDataSource : DataSource {
-
-    override fun queryWeather(cityname: String): Observable<ResponseMsg<ResponseWeatherData>> {
+class WeatherDataSource() : DataSource {
+    fun queryWeather(cityname: String): Observable<ResponseMsg<ResponseWeatherData>> {
         return ApiManager.instance
             .getIWeather()
             .queryWeather(cityname)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-
     }
 }

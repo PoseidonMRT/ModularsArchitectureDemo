@@ -8,6 +8,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion Versions.compileSdkVersion
 
@@ -66,8 +68,8 @@ dependencies {
     implementation Deps.okHttp
     implementation Deps.gson
 
-    annotationProcessor Deps.dagger2Compiler
-    annotationProcessor Deps.lifecycleCompiler
+    kapt Deps.dagger2Compiler
+    kapt Deps.lifecycleCompiler
 
     implementation Deps.recyclerView
     implementation Deps.appcompat_v7
