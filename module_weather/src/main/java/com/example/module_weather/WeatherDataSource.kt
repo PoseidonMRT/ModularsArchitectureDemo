@@ -14,6 +14,7 @@ import javax.inject.Inject
  * @since 1.0.0
  */
 class WeatherDataSource() : DataSource {
+
     fun queryWeather(cityname: String): Observable<ResponseMsg<ResponseWeatherData>> {
         return ApiManager.instance
             .getIWeather()

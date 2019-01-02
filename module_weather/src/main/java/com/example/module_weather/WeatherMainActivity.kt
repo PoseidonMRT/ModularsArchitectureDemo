@@ -1,5 +1,7 @@
 package com.example.module_weather
 
+import android.graphics.drawable.ColorDrawable
+import android.widget.Toast
 import androidx.databinding.Observable
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.module_weather.entity.weather.ResponseWeatherData
@@ -10,9 +12,6 @@ class WeatherMainActivity : BaseActivity() {
 
     @Inject
     lateinit var weatherMainViewModel: WeatherMainViewModel
-
-    @Inject
-    lateinit var dataSource: WeatherDataSource
 
     private lateinit var weatherForecastRecyclerAdapter: WeatherForecastRecyclerAdapter
 
@@ -29,16 +28,29 @@ class WeatherMainActivity : BaseActivity() {
     }
 
     override fun initData() {
-        RetrofitManager.instance.init(applicationContext)
-
         weatherMainViewModel.apply {
+
             weatherData.addOnPropertyChangedCallback(object: Observable.OnPropertyChangedCallback() {
                 override fun onPropertyChanged(sender: Observable, propertyId: Int) {
                     var data:ResponseWeatherData = weatherData.get() as ResponseWeatherData
+                    var todayWeatherType:String = data.forecast[0].type
+
+//                    weather_main_root_constrain.background = ColorDrawable(ResourceGenerater.generateColor(todayWeatherType))
+                    weather_main_weather_type_tv.text = todayWeatherType
+                    weather_main_temperature_tv.text = data.wendu
+                    weather_main_weather_type_iv.setImageResource(ResourceGenerater.generateIcon(todayWeatherType,true))
+
                     var layoutManager = LinearLayoutManager(this@WeatherMainActivity)
                     weatherForecastRecyclerAdapter = WeatherForecastRecyclerAdapter(this@WeatherMainActivity,data.forecast)
                     weather_forecast_list.adapter = weatherForecastRecyclerAdapter
                     weather_forecast_list.layoutManager = layoutManager
+                }
+            })
+
+            error.addOnPropertyChangedCallback(object :Observable.OnPropertyChangedCallback(){
+                override fun onPropertyChanged(sender: Observable?, propertyId: Int) {
+                    var msg:String = error.get() as String
+                    Toast.makeText(this@WeatherMainActivity,msg,Toast.LENGTH_LONG).show()
                 }
             })
         }

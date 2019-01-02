@@ -29,13 +29,10 @@ class WeatherForecastRecyclerAdapter(private val context: Context, private val d
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.dateTextView.text = datas[position].date
-        holder.temperatureTextView.text = datas[position].low+"~"+datas[position].high
-        when(datas[position].type){
-            "阴" -> holder.iconImageView.setImageResource(R.drawable.weather_vector_drawable_icon_black)
-            "多云" -> holder.iconImageView.setImageResource(R.drawable.weather_vector_drawable_icon_cloudy_black)
-            "晴" -> holder.iconImageView.setImageResource(R.drawable.weather_vector_drawable_icon_sunny_black)
-            else -> holder.iconImageView.setImageResource(R.drawable.weather_vector_drawable_icon_black)
-        }
+        var lowtemp = datas[position].low.replace("低温","").replace("℃","").trim()
+        var highTemp = datas[position].high.replace("高温","").replace("℃","").trim()
+        holder.temperatureTextView.text = lowtemp +"~"+ highTemp
+        holder.iconImageView.setImageResource(ResourceGenerater.generateIcon(datas[position].type,false))
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

@@ -18,26 +18,23 @@ import io.reactivex.disposables.Disposable
 class WeatherMainViewModel(private val context: Application, private val dataSource: DataSource) :
     AndroidViewModel(context) {
 
+    var error:ObservableField<String> = ObservableField()
     var weatherData:ObservableField<ResponseWeatherData> = ObservableField()
 
     fun queryWeatherInfo(){
         (dataSource as WeatherDataSource).queryWeather("成都")
             .subscribe(object: Observer<ResponseMsg<ResponseWeatherData>> {
                 override fun onComplete() {
-
                 }
 
                 override fun onSubscribe(d: Disposable) {
-
                 }
 
                 override fun onError(e: Throwable) {
-                     Log.e("TZB",e.message)
+                    error.set(e.message)
                 }
 
                 override fun onNext(t: ResponseMsg<ResponseWeatherData>) {
-                    //update ui
-                    Log.e("TZB",t.toString())
                     weatherData.set(t.data)
                 }
             })

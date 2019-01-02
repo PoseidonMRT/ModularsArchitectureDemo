@@ -7,4 +7,6 @@
     <color name="weather_color_1f88ca">#1f88ca</color>
     <color name="weather_color_79b8df">#79b8df</color>
     <color name="weather_color282828">#282828</color>
+    <color name="weather_color_ffd700">#FFD700</color>
+    <color name="weather_color_cccccc">#CCCCCC</color>
 </resources>
