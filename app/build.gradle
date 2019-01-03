@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion Versions.compileSdkVersion
     defaultConfig {
@@ -29,18 +31,24 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    if(!ModuleBuildType.isBuildModuleOnly){
+        implementation project(":module_weather")
+    }
+
+    implementation project(":CommonSDK")
     implementation Deps.kotlin_stdlib
     implementation Deps.appcompat_v7
     implementation Deps.constraint_layout
 
     implementation Deps.dagger2
-    annotationProcessor Deps.dagger2Compiler
+    kapt Deps.dagger2Compiler
 
     implementation Deps.rxjava2
     implementation Deps.rxandroid
 
     implementation Deps.arouterApi
-    annotationProcessor Deps.arouterCompiler
+    kapt Deps.arouterCompiler
 
     implementation Deps.lottie
 
