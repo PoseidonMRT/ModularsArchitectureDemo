@@ -21,6 +21,12 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+                includeCompileClasspath true
+            }
+        }
     }
 
     buildTypes {
@@ -53,6 +59,8 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    implementation project(":CommonSDK")
+
     implementation Deps.kotlin_stdlib
     implementation Deps.lifecycle_extension
     implementation Deps.lifecycle_runtime
@@ -67,6 +75,9 @@ dependencies {
     implementation Deps.retrofit
     implementation Deps.okHttp
     implementation Deps.gson
+
+    implementation Deps.arouterApi
+    kapt Deps.arouterCompiler
 
     kapt Deps.dagger2Compiler
     kapt Deps.lifecycleCompiler
