@@ -12,7 +12,7 @@ object Versions{
     val appcompat_v7 = "28.0.0"
     val constraint_layout = "1.1.3"
 
-    val lifecycle = "2.0.0"
+    val lifecycle = "2.0.0-rc01"
 
     val compileSdkVersion = 28
     val minSdkVersion = 17
