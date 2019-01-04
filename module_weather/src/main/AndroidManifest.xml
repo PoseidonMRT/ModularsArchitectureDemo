@@ -2,9 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.example.module_weather">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application>
-        <activity android:name=".WeatherMainActivity" android:theme="@style/WeatherAppThemeNoActionBar">
+
+        <activity
+                android:name=".WeatherMainActivity"
+                android:theme="@style/WeatherAppThemeNoActionBar">
         </activity>
+
+        <meta-data
+                android:name="com.example.module_weather.app.AppLifecycleDelegate"
+                android:value="ModuleApplication"/>
     </application>
 
 </manifest>

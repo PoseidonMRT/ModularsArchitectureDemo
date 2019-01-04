@@ -16,10 +16,6 @@ import javax.inject.Singleton
 @Module
 class WeatherAppModules(var context: Context) {
 
-    init {
-        RetrofitManager.instance.init(context.applicationContext)
-    }
-
     @Singleton
     @Provides
     fun provideApplicationContext(): Context {
