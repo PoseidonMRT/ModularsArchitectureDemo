@@ -11,11 +11,13 @@ import android.content.Context
  */
 open class BaseApplication :Application() {
 
-    lateinit var appDelegate: ApplicationLifecycleDelegate
+    private var appDelegate: ApplicationLifecycleDelegate? = null
 
     override fun attachBaseContext(base: Context) {
         super.attachBaseContext(base)
-        appDelegate = AppDelegate(base)
+        if (appDelegate == null){
+            appDelegate = AppDelegate(base)
+        }
         appDelegate?.attachBaseContext(base)
     }
 
