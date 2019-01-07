@@ -1,11 +1,10 @@
 package com.example.module_weather
 
-import com.example.module_weather.entity.ResponseMsg
+import com.example.commonservice.ResponseMsg
 import com.example.module_weather.entity.weather.ResponseWeatherData
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import javax.inject.Inject
 
 /**
  * @author
@@ -13,7 +12,7 @@ import javax.inject.Inject
  * @description
  * @since 1.0.0
  */
-class WeatherDataSource() : DataSource {
+class WeatherDataSource {
 
     fun queryWeather(cityname: String): Observable<ResponseMsg<ResponseWeatherData>> {
         return ApiManager.instance

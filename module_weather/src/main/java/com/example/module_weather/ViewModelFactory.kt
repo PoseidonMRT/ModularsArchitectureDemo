@@ -13,14 +13,13 @@ import androidx.lifecycle.ViewModelProvider
  * @since 1.0.0
  */
 class ViewModelFactory private constructor(
-    private val application: Application,
-    private val dataSource: DataSource
+    private val application: Application
 ) : ViewModelProvider.NewInstanceFactory() {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T =
         with(modelClass) {
             when {
                 isAssignableFrom(WeatherMainViewModel::class.java) ->
-                    WeatherMainViewModel(application, dataSource)
+                    WeatherMainViewModel(application)
                 else ->
                     throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
             }
@@ -32,9 +31,9 @@ class ViewModelFactory private constructor(
         @Volatile
         private var INSTANCE: ViewModelFactory? = null
 
-        fun getInstance(application: Application, dataSource: DataSource) =
+        fun getInstance(application: Application) =
             INSTANCE ?: synchronized(ViewModelFactory::class.java) {
-                INSTANCE ?: ViewModelFactory(application, dataSource)
+                INSTANCE ?: ViewModelFactory(application)
                     .also { INSTANCE = it }
             }
 

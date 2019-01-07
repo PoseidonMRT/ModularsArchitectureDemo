@@ -60,6 +60,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(":CommonSDK")
+    implementation project(":CommonService")
 
     implementation Deps.kotlin_stdlib
     implementation Deps.lifecycle_extension
@@ -71,7 +72,6 @@ dependencies {
     implementation Deps.convert_gson
     implementation Deps.adapter_rxjava
     implementation Deps.rxandroid
-    implementation Deps.dagger2
     implementation Deps.retrofit
     implementation Deps.okHttp
     implementation Deps.gson
@@ -79,7 +79,6 @@ dependencies {
     implementation Deps.arouterApi
     kapt Deps.arouterCompiler
 
-    kapt Deps.dagger2Compiler
     kapt Deps.lifecycleCompiler
 
     implementation Deps.recyclerView

@@ -1,10 +1,9 @@
 package com.example.module_weather
 
 import android.app.Application
-import android.util.Log
 import androidx.databinding.ObservableField
 import androidx.lifecycle.AndroidViewModel
-import com.example.module_weather.entity.ResponseMsg
+import com.example.commonservice.ResponseMsg
 import com.example.module_weather.entity.weather.ResponseWeatherData
 import io.reactivex.Observer
 import io.reactivex.disposables.Disposable
@@ -15,15 +14,20 @@ import io.reactivex.disposables.Disposable
  * @description
  * @since 1.0.0
  */
-class WeatherMainViewModel(private val context: Application, private val dataSource: DataSource) :
+class WeatherMainViewModel(var context: Application) :
     AndroidViewModel(context) {
 
-    var error:ObservableField<String> = ObservableField()
-    var weatherData:ObservableField<ResponseWeatherData> = ObservableField()
+    var weatherDataSource: WeatherDataSource
+    var error: ObservableField<String> = ObservableField()
+    var weatherData: ObservableField<ResponseWeatherData> = ObservableField()
 
-    fun queryWeatherInfo(){
-        (dataSource as WeatherDataSource).queryWeather("成都")
-            .subscribe(object: Observer<ResponseMsg<ResponseWeatherData>> {
+    init {
+        weatherDataSource = WeatherDataSource()
+    }
+
+    fun queryWeatherInfo(cityName:String) {
+        weatherDataSource.queryWeather(cityName)
+            .subscribe(object : Observer<ResponseMsg<ResponseWeatherData>> {
                 override fun onComplete() {
                 }
 

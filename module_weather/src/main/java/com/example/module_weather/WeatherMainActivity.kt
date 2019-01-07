@@ -5,14 +5,13 @@ import androidx.databinding.Observable
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.example.commonsdk.RouterHub
+import com.example.commonsdk.base.BaseActivity
 import com.example.module_weather.entity.weather.ResponseWeatherData
 import kotlinx.android.synthetic.main.weather_main_activity.*
-import javax.inject.Inject
 
 @Route(path = RouterHub.WEATHER_MAIN_ACTIVITY)
 class WeatherMainActivity : BaseActivity() {
 
-    @Inject
     lateinit var weatherMainViewModel: WeatherMainViewModel
 
     private lateinit var weatherForecastRecyclerAdapter: WeatherForecastRecyclerAdapter
@@ -22,14 +21,11 @@ class WeatherMainActivity : BaseActivity() {
     }
 
     override fun initComponent() {
-        DaggerWeatherAppComponents
-            .builder()
-            .weatherAppModules(WeatherAppModules(this))
-            .build()
-            .inject(this)
     }
 
     override fun initData() {
+        weatherMainViewModel = ViewModelFactory.getInstance(application).create(WeatherMainViewModel::class.java)
+
         weatherMainViewModel.apply {
 
             weatherData.addOnPropertyChangedCallback(object: Observable.OnPropertyChangedCallback() {
@@ -56,6 +52,6 @@ class WeatherMainActivity : BaseActivity() {
             })
         }
 
-        weatherMainViewModel.queryWeatherInfo()
+        weatherMainViewModel.queryWeatherInfo("成都")
     }
 }
