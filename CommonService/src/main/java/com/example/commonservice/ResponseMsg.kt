@@ -1,4 +1,4 @@
-package com.example.module_weather.entity
+package com.example.commonservice
 
 /**
  * @author

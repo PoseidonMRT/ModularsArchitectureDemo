@@ -1,6 +1,6 @@
-package com.example.module_weather
+package com.example.commonservice.weather
 
-import com.example.module_weather.entity.ResponseMsg
+import com.example.commonservice.ResponseMsg
 import com.example.module_weather.entity.weather.ResponseWeatherData
 import io.reactivex.Observable
 import retrofit2.http.GET
