@@ -28,6 +28,7 @@ dependencies {
 
     implementation Deps.kotlin_stdlib
 
+    implementation Deps.appcompat_v7
     implementation Deps.okHttp
     implementation Deps.rxjava2
     implementation Deps.convert_gson
