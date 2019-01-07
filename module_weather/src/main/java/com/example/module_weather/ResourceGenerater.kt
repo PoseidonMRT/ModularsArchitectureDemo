@@ -33,6 +33,13 @@ class ResourceGenerater {
                         resId = R.drawable.weather_vector_drawable_icon_sunny_black
                     }
                 }
+                "小雨" -> {
+                    if (isBiggerIcon) {
+                        resId = R.drawable.weather_vector_drawable_icon_cloudy_rain_white
+                    } else {
+                        resId = R.drawable.weather_vector_drawable_icon_cloudy_rain_black
+                    }
+                }
                 else -> {
                     if (isBiggerIcon) {
                         resId = R.drawable.weather_vector_drawable_icon_white
