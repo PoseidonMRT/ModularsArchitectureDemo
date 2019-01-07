@@ -6,7 +6,6 @@ import android.util.Log
 import com.alibaba.android.arouter.launcher.ARouter
 import com.example.commonsdk.app.ApplicationLifecycleDelegate
 import com.example.module_weather.BuildConfig
-import com.example.module_weather.RetrofitManager
 
 /**
  * @author
@@ -22,7 +21,6 @@ class AppLifecycleDelegate: ApplicationLifecycleDelegate {
     override fun onCreate(application: Application) {
         Log.e("TZB","Application onCreate")
 
-        RetrofitManager.instance.init(application.applicationContext)
         if (BuildConfig.DEBUG){
             ARouter.openDebug()
             ARouter.openLog()

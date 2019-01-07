@@ -1,2 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.commonsdk"/>
+          package="com.example.commonsdk">
+    <application>
+
+    </application>
+</manifest>
+

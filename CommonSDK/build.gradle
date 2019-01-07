@@ -28,6 +28,11 @@ dependencies {
 
     implementation Deps.kotlin_stdlib
 
+    implementation Deps.okHttp
+    implementation Deps.rxjava2
+    implementation Deps.convert_gson
+    implementation Deps.adapter_rxjava
+
     testImplementation Deps.junit
     androidTestImplementation Deps.test_runner
     androidTestImplementation Deps.espresso

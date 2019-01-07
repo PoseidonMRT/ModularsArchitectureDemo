@@ -1,8 +1,6 @@
 package com.example.module_weather
 
-import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
+import com.example.commonsdk.http.RetrofitInstance
 
 /**
  * @author
@@ -13,7 +11,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 val url = "https://www.apiopen.top/"
 
 class ApiManager private constructor() {
-
     private var iWeather: WeatherService = build(url, WeatherService::class.java)
 
     fun getIWeather(): WeatherService {
@@ -21,12 +18,9 @@ class ApiManager private constructor() {
     }
 
     private fun <T> build(host: String, cls: Class<T>): T {
-        return Retrofit.Builder()
-            .baseUrl(host)
-            .client(RetrofitManager.instance.defaultClient)
-            .addConverterFactory(GsonConverterFactory.create())
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .build()
+        return RetrofitInstance
+            .getInstance()
+            .getRetrofit(host)
             .create(cls)
     }
 
