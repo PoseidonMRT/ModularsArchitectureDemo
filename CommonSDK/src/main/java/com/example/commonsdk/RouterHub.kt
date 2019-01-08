@@ -13,6 +13,7 @@ interface RouterHub {
          */
         const val APP = "/app"//宿主 App 组件
         const val WEATHER = "/weather"//天气组件
+        const val NEWS = "/news"
 
 
         /**
@@ -25,5 +26,10 @@ interface RouterHub {
          * 天气模块分组
          */
         const val WEATHER_MAIN_ACTIVITY = "$WEATHER/WeatherMainActivity"
+
+        /**
+         * 新闻模块
+         */
+        const val NEWS_MAIN_ACTIVITY = "${NEWS}/"
     }
 }

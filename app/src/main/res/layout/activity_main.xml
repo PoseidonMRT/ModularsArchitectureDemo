@@ -32,8 +32,8 @@
             android:layout_marginRight="15dp"
     >
         <ImageView
-                android:id="@+id/weather"
-                android:src="@drawable/weather_icon"
+                android:id="@+id/weather_iv"
+                android:src="@drawable/vector_drawable_weather_icon"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:padding="10dp"
@@ -41,14 +41,15 @@
                 android:layout_centerVertical="true"
                 android:background="@drawable/grey_border_radius_circle_rectangle"/>
         <ImageView
-                android:src="@drawable/weather_icon"
+                android:id="@+id/news_iv"
+                android:src="@drawable/vector_drawable_news_icon"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:padding="10dp"
                 android:layout_centerInParent="true"
                 android:background="@drawable/grey_border_radius_circle_rectangle"/>
         <ImageView
-                android:src="@drawable/weather_icon"
+                android:src="@drawable/vector_drawable_weather_icon"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:padding="10dp"
