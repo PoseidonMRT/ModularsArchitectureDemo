@@ -30,6 +30,6 @@ interface RouterHub {
         /**
          * 新闻模块
          */
-        const val NEWS_MAIN_ACTIVITY = "${NEWS}/"
+        const val NEWS_MAIN_ACTIVITY = "${NEWS}/NewsMainActivity"
     }
 }

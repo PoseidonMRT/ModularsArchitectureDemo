@@ -1,2 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.module_news"/>
+          package="com.example.module_news">
+
+    <application android:theme="@style/NewsAppTheme">
+
+        <activity android:name=".NewsMainActivity" android:theme="@style/NewsAppThemeNoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <meta-data android:name="com.example.module_news.app.AppLifecycleDelegate"
+                   android:value="ModuleApplication"/>
+    </application>
+
+</manifest>

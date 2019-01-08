@@ -11,9 +11,8 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
+
     compileSdkVersion Versions.compileSdkVersion
-
-
 
     defaultConfig {
         minSdkVersion Versions.minSdkVersion
@@ -23,6 +22,12 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+                includeCompileClasspath true
+            }
+        }
     }
 
     buildTypes {
@@ -51,9 +56,19 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    implementation project(":CommonSDK")
     implementation Deps.kotlin_stdlib
     implementation Deps.appcompat_v7
+    implementation Deps.constraint_layout
+
+    implementation Deps.arouterApi
+    kapt Deps.arouterCompiler
+    
     testImplementation Deps.junit
     androidTestImplementation Deps.test_runner
     androidTestImplementation Deps.espresso
+}
+
+repositories {
+    mavenCentral()
 }
