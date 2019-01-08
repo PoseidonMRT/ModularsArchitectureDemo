@@ -23,5 +23,9 @@ class MainActivity : AppCompatActivity() {
         news_iv.setOnClickListener {
             ARouter.getInstance().build(RouterHub.NEWS_MAIN_ACTIVITY).navigation(this@MainActivity)
         }
+
+        article_iv.setOnClickListener {
+            ARouter.getInstance().build(RouterHub.ARTICLE_MAIN_ACTIVITY).navigation(this@MainActivity)
+        }
     }
 }

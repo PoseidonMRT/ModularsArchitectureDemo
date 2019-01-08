@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.module_article">
+
+    <application>
+        <activity android:name=".ArticleMainActivity" android:theme="@style/ArticleAppThemeNoActionBar">
+        </activity>
+        <meta-data android:name="com.example.module_article.app.AppLifecycleDelegate"
+                   android:value="ModuleApplication"/>
+    </application>
+
+</manifest>

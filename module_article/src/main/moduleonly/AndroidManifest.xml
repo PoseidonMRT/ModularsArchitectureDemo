@@ -1,0 +1,16 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.module_article">
+    <application android:name="com.example.commonsdk.app.BaseApplication">
+
+        <activity android:name=".ArticleMainActivity" android:theme="@style/ArticleAppThemeNoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <meta-data android:name="com.example.module_article.app.AppLifecycleDelegate"
+                   android:value="ModuleApplication"/>
+    </application>
+</manifest>
