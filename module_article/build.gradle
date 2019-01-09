@@ -67,11 +67,6 @@ dependencies {
     implementation Deps.appcompat_v7
     implementation Deps.constraint_layout
 
-    implementation Deps.lifecycle_extension
-    implementation Deps.lifecycle_runtime
-    implementation Deps.viewModel
-    implementation Deps.liveData
-
     implementation Deps.retrofit
 
     implementation Deps.rxjava2
