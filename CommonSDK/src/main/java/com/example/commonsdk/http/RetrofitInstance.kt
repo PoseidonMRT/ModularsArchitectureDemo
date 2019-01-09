@@ -26,6 +26,7 @@ class RetrofitInstance {
         builder.connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
         builder.readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
         builder.writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS)
+        builder.addInterceptor(LoggingInterceptor())
         okHttpClient = builder.build()
     }
 

@@ -74,6 +74,7 @@ object Deps{
     val convert_gson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
     val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     val okHttp = "com.squareup.okhttp3:okhttp:${Versions.okHttp}"
+    val okHttp_interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttp}"
     val gson = "com.google.code.gson:gson:${Versions.gson}"
 }
 

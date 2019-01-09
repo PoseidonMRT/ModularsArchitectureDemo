@@ -47,6 +47,10 @@ android {
         }
     }
 
+    dataBinding {
+        enabled = true
+    }
+
 }
 
 android {
@@ -55,10 +59,24 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
     implementation project(":CommonSDK")
+    implementation project(":CommonService")
+
     implementation Deps.kotlin_stdlib
     implementation Deps.appcompat_v7
     implementation Deps.constraint_layout
+
+    implementation Deps.lifecycle_extension
+    implementation Deps.lifecycle_runtime
+    implementation Deps.viewModel
+    implementation Deps.liveData
+
+    implementation Deps.retrofit
+
+    implementation Deps.rxjava2
+    implementation Deps.rxandroid
+    implementation Deps.okHttp_interceptor
 
     implementation Deps.arouterApi
     kapt Deps.arouterCompiler
