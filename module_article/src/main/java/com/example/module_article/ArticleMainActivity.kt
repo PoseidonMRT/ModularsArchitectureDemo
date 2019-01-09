@@ -6,7 +6,7 @@ import androidx.databinding.Observable
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.example.commonsdk.RouterHub
 import com.example.commonsdk.base.BaseActivity
-import com.example.commonservice.article.ResponseArticleData
+import com.example.commonservice.article.entity.ResponseArticleData
 import kotlinx.android.synthetic.main.article_activity_main.*
 
 @Route(path = RouterHub.ARTICLE_MAIN_ACTIVITY)
@@ -24,7 +24,7 @@ class ArticleMainActivity : BaseActivity() {
         articleMainViewModel.apply {
             todayArticle.addOnPropertyChangedCallback(object :Observable.OnPropertyChangedCallback(){
                 override fun onPropertyChanged(sender: Observable?, propertyId: Int) {
-                    var todayArticle:ResponseArticleData = todayArticle.get() as ResponseArticleData
+                    var todayArticle: ResponseArticleData = todayArticle.get() as ResponseArticleData
                     article_author.text = todayArticle.author
                     article_content.text = Html.fromHtml(todayArticle.content)
                     article_title.text = todayArticle.title

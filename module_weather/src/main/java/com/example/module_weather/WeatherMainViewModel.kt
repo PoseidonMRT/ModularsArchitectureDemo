@@ -3,7 +3,7 @@ package com.example.module_weather
 import android.app.Application
 import androidx.databinding.ObservableField
 import androidx.lifecycle.AndroidViewModel
-import com.example.commonservice.ResponseMsg
+import com.example.commonservice.weather.ResponseWeatherMsg
 import com.example.module_weather.entity.weather.ResponseWeatherData
 import io.reactivex.Observer
 import io.reactivex.disposables.Disposable
@@ -27,7 +27,7 @@ class WeatherMainViewModel(var context: Application) :
 
     fun queryWeatherInfo(cityName:String) {
         weatherDataSource.queryWeather(cityName)
-            .subscribe(object : Observer<ResponseMsg<ResponseWeatherData>> {
+            .subscribe(object : Observer<ResponseWeatherMsg<ResponseWeatherData>> {
                 override fun onComplete() {
                 }
 
@@ -38,7 +38,7 @@ class WeatherMainViewModel(var context: Application) :
                     error.set(e.message)
                 }
 
-                override fun onNext(t: ResponseMsg<ResponseWeatherData>) {
+                override fun onNext(t: ResponseWeatherMsg<ResponseWeatherData>) {
                     weatherData.set(t.data)
                 }
             })

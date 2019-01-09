@@ -1,6 +1,6 @@
-package com.example.commonservice
+package com.example.commonservice.article
 
-import com.example.commonservice.article.ResponseArticleData
+import com.example.commonservice.article.entity.ResponseArticleData
 
 /**
  * @author

@@ -1,6 +1,5 @@
 package com.example.commonservice.article
 
-import com.example.commonservice.ResponseArticle
 import io.reactivex.Observable
 import retrofit2.http.*
 

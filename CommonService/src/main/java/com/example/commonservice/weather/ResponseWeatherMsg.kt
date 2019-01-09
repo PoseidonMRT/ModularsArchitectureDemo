@@ -1,4 +1,4 @@
-package com.example.commonservice
+package com.example.commonservice.weather
 
 /**
  * @author
@@ -6,7 +6,7 @@ package com.example.commonservice
  * @description
  * @since 1.0.0
  */
-data class ResponseMsg<T>(
+data class ResponseWeatherMsg<T>(
     var code: Int,
     var msg: String,
     var data: T

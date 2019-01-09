@@ -1,4 +1,4 @@
-package com.example.commonservice.article
+package com.example.commonservice.article.entity
 
 /**
  * @author

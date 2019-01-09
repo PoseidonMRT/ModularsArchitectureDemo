@@ -1,6 +1,5 @@
 package com.example.commonservice.weather
 
-import com.example.commonservice.ResponseMsg
 import com.example.module_weather.entity.weather.ResponseWeatherData
 import io.reactivex.Observable
 import retrofit2.http.GET
@@ -16,5 +15,5 @@ import retrofit2.http.Query
 interface WeatherService {
 
     @GET("weatherApi")
-    fun queryWeather(@Query("city") cityname: String):Observable<ResponseMsg<ResponseWeatherData>>
+    fun queryWeather(@Query("city") cityname: String):Observable<ResponseWeatherMsg<ResponseWeatherData>>
 }

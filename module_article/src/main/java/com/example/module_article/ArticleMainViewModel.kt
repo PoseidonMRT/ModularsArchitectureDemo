@@ -4,8 +4,8 @@ import android.app.Application
 import android.util.Log
 import androidx.databinding.ObservableField
 import androidx.lifecycle.AndroidViewModel
-import com.example.commonservice.ResponseArticle
-import com.example.commonservice.article.ResponseArticleData
+import com.example.commonservice.article.ResponseArticle
+import com.example.commonservice.article.entity.ResponseArticleData
 import io.reactivex.Observer
 import io.reactivex.disposables.Disposable
 

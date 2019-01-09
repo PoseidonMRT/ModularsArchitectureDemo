@@ -1,7 +1,7 @@
 package com.example.module_article
 
 import android.util.Log
-import com.example.commonservice.ResponseArticle
+import com.example.commonservice.article.ResponseArticle
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
