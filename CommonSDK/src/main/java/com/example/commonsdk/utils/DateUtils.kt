@@ -13,9 +13,9 @@ import java.util.*
  */
 object DateUtils {
 
-    fun getOldDate(distanceDay: Int): String {
+    fun getOldDate(currentDate:String,distanceDay: Int): String {
         val dft = SimpleDateFormat("yyyyMMdd")
-        val beginDate = Date()
+        val beginDate = dft.parse(currentDate)
         val date = Calendar.getInstance()
         date.time = beginDate
         date.set(Calendar.DATE, date.get(Calendar.DATE) + distanceDay)
@@ -26,5 +26,11 @@ object DateUtils {
             e.printStackTrace()
         }
         return dft.format(endDate)
+    }
+
+    fun getCurrentDate(): String {
+        val dft = SimpleDateFormat("yyyyMMdd")
+        val beginDate = Date()
+        return dft.format(beginDate)
     }
 }

@@ -2,12 +2,14 @@ package com.example.module_article
 
 import android.graphics.Color
 import android.text.Html
+import android.view.View
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.databinding.Observable
 import androidx.drawerlayout.widget.DrawerLayout
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.example.commonsdk.RouterHub
 import com.example.commonsdk.base.BaseActivity
+import com.example.commonsdk.utils.DateUtils
 import com.example.commonservice.article.entity.ResponseArticleData
 import kotlinx.android.synthetic.main.article_activity_main.*
 
@@ -34,6 +36,17 @@ class ArticleMainActivity : BaseActivity() {
                     article_title.text = todayArticle.title
                 }
             })
+
+            currentDate.addOnPropertyChangedCallback(object :Observable.OnPropertyChangedCallback(){
+                override fun onPropertyChanged(sender: Observable?, propertyId: Int) {
+                    var date = currentDate.get() as String
+                    if (date == DateUtils.getCurrentDate()){
+                        article_main_next.visibility = View.GONE
+                    }else{
+                        article_main_next.visibility = View.VISIBLE
+                    }
+                }
+            })
         }
     }
 
@@ -50,6 +63,22 @@ class ArticleMainActivity : BaseActivity() {
             if (!article_main_drawer_layout.isDrawerOpen(article_main_drawer_right_layout)){
                 article_main_drawer_layout.openDrawer(article_main_drawer_right_layout)
             }
+        }
+
+        article_main_next.setOnClickListener {
+            articleMainViewModel.loadArticleDate(1)
+        }
+
+        article_main_prev.setOnClickListener {
+            articleMainViewModel.loadArticleDate(-1)
+        }
+
+        article_main_random.setOnClickListener {
+            articleMainViewModel.loadArticleRandom()
+        }
+
+        article_main_today.setOnClickListener {
+            articleMainViewModel.loadTodayArticle()
         }
     }
 

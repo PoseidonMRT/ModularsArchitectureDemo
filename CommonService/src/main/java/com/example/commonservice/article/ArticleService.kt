@@ -17,4 +17,18 @@ interface ArticleService {
     )
     @GET("today")
     fun loadTodayArticle(@Query("dev") dev:Int): Observable<ResponseArticle>
+
+    @Headers(
+        "Accept: application/vnd.github.v3.full+json",
+        "User-Agent: Retrofit-Sample-App"
+    )
+    @GET("day")
+    fun loadArticleDate(@Query("dev") dev:Int,@Query("date") date:String): Observable<ResponseArticle>
+
+    @Headers(
+        "Accept: application/vnd.github.v3.full+json",
+        "User-Agent: Retrofit-Sample-App"
+    )
+    @GET("random")
+    fun loadArticleRandom(@Query("dev") dev:Int): Observable<ResponseArticle>
 }

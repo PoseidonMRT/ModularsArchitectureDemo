@@ -22,4 +22,20 @@ class ArticleDataSource {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
     }
+
+    fun loadArticleDate(dev:Int,date:String):Observable<ResponseArticle>{
+        return ArticleApiManager.instance
+            .getIArticle()
+            .loadArticleDate(dev,date)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+    }
+
+    fun loadArticleRandom(dev:Int):Observable<ResponseArticle>{
+        return ArticleApiManager.instance
+            .getIArticle()
+            .loadArticleRandom(dev)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+    }
 }
