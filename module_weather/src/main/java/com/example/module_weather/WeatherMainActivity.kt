@@ -23,7 +23,7 @@ class WeatherMainActivity : BaseActivity() {
     override fun initComponent() {
     }
 
-    override fun initData() {
+    override fun initViewModel() {
         weatherMainViewModel = ViewModelFactory.getInstance(application).create(WeatherMainViewModel::class.java)
 
         weatherMainViewModel.apply {
@@ -51,7 +51,13 @@ class WeatherMainActivity : BaseActivity() {
                 }
             })
         }
+    }
 
+    override fun initViewState() {
+
+    }
+
+    override fun initData() {
         weatherMainViewModel.queryWeatherInfo("成都")
     }
 }

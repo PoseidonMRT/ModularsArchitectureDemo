@@ -1,8 +1,10 @@
 package com.example.module_article
 
+import android.graphics.Color
 import android.text.Html
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.databinding.Observable
+import androidx.drawerlayout.widget.DrawerLayout
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.example.commonsdk.RouterHub
 import com.example.commonsdk.base.BaseActivity
@@ -18,7 +20,9 @@ class ArticleMainActivity : BaseActivity() {
 
     override fun getLayout(): Int = R.layout.article_activity_main
 
-    override fun initData() {
+    override fun initComponent() {}
+
+    override fun initViewModel() {
         articleMainViewModel = ViewModelFactory.getInstance(application).create(ArticleMainViewModel::class.java)
 
         articleMainViewModel.apply {
@@ -31,12 +35,10 @@ class ArticleMainActivity : BaseActivity() {
                 }
             })
         }
+    }
 
-        articleMainViewModel.loadTodayArticle()
-
-        drawerToggle = ActionBarDrawerToggle(this,article_main_drawer_layout,R.string.article_drawer_open,R.string.article_drawer_close)
-        article_main_drawer_layout.addDrawerListener(drawerToggle)
-        drawerToggle.syncState()
+    override fun initViewState() {
+        initDrawerLayout()
 
         article_open_left_drawer_iv.setOnClickListener {
             if (!article_main_drawer_layout.isDrawerOpen(article_main_drawer_left_layout)){
@@ -51,7 +53,19 @@ class ArticleMainActivity : BaseActivity() {
         }
     }
 
-    override fun initComponent() {
+    private fun initDrawerLayout(){
+        drawerToggle = ActionBarDrawerToggle(this,article_main_drawer_layout,R.string.article_drawer_open,R.string.article_drawer_close)
+        article_main_drawer_layout.addDrawerListener(drawerToggle)
+        article_main_drawer_layout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+        article_main_drawer_layout.setScrimColor(Color.TRANSPARENT)
+        drawerToggle.syncState()
+    }
 
+    override fun initData() {
+    }
+
+    override fun onResume() {
+        super.onResume()
+        articleMainViewModel.loadTodayArticle()
     }
 }

@@ -9,11 +9,11 @@ class NewsMainActivity : BaseActivity() {
 
     override fun getLayout(): Int = R.layout.news_activity_main
 
-    override fun initData() {
+    override fun initViewModel() {}
 
-    }
+    override fun initViewState() {}
 
-    override fun initComponent() {
+    override fun initData() {}
 
-    }
+    override fun initComponent() {}
 }

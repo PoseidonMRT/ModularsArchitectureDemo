@@ -1,3 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="article_color_ee000000">#EE000000</color>
+    <color name="article_color_55ffffff">#55FFFFFF</color>
+    <color name="article_color_5a5b56">#5A5B56</color>
+    <color name="article_color_000000">#000000</color>
+    <color name="article_color_40c8a6">#40C8A6</color>
+    <color name="article_color_f7f7f7">#F7F7F7</color>
 </resources>

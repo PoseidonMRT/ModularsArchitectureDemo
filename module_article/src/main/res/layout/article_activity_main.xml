@@ -9,6 +9,7 @@
     <LinearLayout
             android:id="@+id/article_main"
             android:orientation="vertical"
+            android:background="@color/article_color_f7f7f7"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -19,20 +20,20 @@
                 android:layout_weight="1">
             <ImageView
                     android:id="@+id/article_open_left_drawer_iv"
-                    android:layout_width="60dp"
+                    android:layout_width="@dimen/article_dp60"
                     android:src="@drawable/article_vector_drawable_icon_menu"
                     android:layout_height="match_parent"
-                    android:padding="10dp"
+                    android:padding="@dimen/article_dp10"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentBottom="true"/>
 
             <ImageView
                     android:id="@+id/article_open_right_drawer_iv"
-                    android:layout_width="60dp"
+                    android:layout_width="@dimen/article_dp60"
                     android:src="@drawable/article_vector_drawable_icon_more"
                     android:layout_height="match_parent"
-                    android:padding="10dp"
+                    android:padding="@dimen/article_dp10"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentBottom="true"/>
@@ -52,27 +53,27 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="书名"
-                        android:textSize="20sp"
-                        android:textColor="#000000"
+                        android:textSize="@dimen/article_text_size_20"
+                        android:textColor="@color/article_color_000000"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                 />
                 <View
                         android:id="@+id/article_divider"
                         android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="15dp"
-                        android:layout_marginLeft="15dp"
-                        android:background="#40C8A6"
+                        android:layout_height="@dimen/article_dp1"
+                        android:layout_marginTop="@dimen/article_dp10"
+                        android:layout_marginRight="@dimen/article_dp15"
+                        android:layout_marginLeft="@dimen/article_dp15"
+                        android:background="@color/article_color_40c8a6"
                         app:layout_constraintTop_toBottomOf="@id/article_title"/>
                 <TextView
                         android:id="@+id/article_author"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="作者"
-                        android:textSize="12sp"
-                        android:layout_marginTop="10dp"
+                        android:textSize="@dimen/article_text_size_12"
+                        android:layout_marginTop="@dimen/article_dp10"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/article_divider"/>
@@ -81,11 +82,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="作者"
-                        android:textSize="16sp"
-                        android:textColor="#000000"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="15dp"
-                        android:layout_marginLeft="15dp"
+                        android:textSize="@dimen/article_text_size_16"
+                        android:textColor="@color/article_color_000000"
+                        android:layout_marginTop="@dimen/article_dp10"
+                        android:layout_marginRight="@dimen/article_dp15"
+                        android:layout_marginLeft="@dimen/article_dp15"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/article_author"/>
@@ -93,37 +94,84 @@
         </ScrollView>
     </LinearLayout>
 
-    <RelativeLayout
+    <LinearLayout
             android:id="@+id/article_main_drawer_left_layout"
-            android:layout_width="100dp"
+            android:layout_width="@dimen/article_dp150"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            android:background="#000000"
-            android:paddingTop="50dp">
+            android:background="@color/article_color_ee000000"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/article_dp80">
 
         <TextView
+                android:id="@+id/article_main_settings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:textColor="#5A5B56"
-                android:text="左边菜单测试"/>
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:drawableLeft="@drawable/article_vector_drawable_icon_settings"
+                android:textColor="@color/article_color_55ffffff"
+                android:text="@string/article_reading_settings_str"/>
+    </LinearLayout>
 
-    </RelativeLayout>
-
-    <RelativeLayout
+    <LinearLayout
             android:id="@+id/article_main_drawer_right_layout"
-            android:layout_width="100dp"
+            android:layout_width="@dimen/article_dp100"
             android:layout_height="match_parent"
             android:layout_gravity="end"
-            android:background="#000000"
-            android:paddingTop="50dp">
+            android:orientation="vertical"
+            android:background="@color/article_color_ee000000"
+            android:divider="@color/article_color_55ffffff"
+            android:dividerPadding="@dimen/article_dp1"
+            android:showDividers="middle"
+            android:paddingTop="@dimen/article_dp80">
 
         <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/article_main_prev"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:textColor="#5A5B56"
-                android:text="右边菜单测试"/>
-    </RelativeLayout>
+                android:drawableTop="@drawable/article_vector_drawable_icon_prev"
+                android:textColor="@color/article_color_55ffffff"
+                android:drawablePadding="@dimen/article_dp5"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:layout_margin="@dimen/article_dp5"
+                android:text="前一天"/>
+
+        <TextView
+                android:id="@+id/article_main_today"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/article_vector_drawable_icon_today"
+                android:textColor="@color/article_color_55ffffff"
+                android:drawablePadding="@dimen/article_dp5"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:layout_margin="@dimen/article_dp5"
+                android:text="今日"/>
+        <TextView
+                android:id="@+id/article_main_next"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/article_vector_drawable_icon_next"
+                android:textColor="@color/article_color_55ffffff"
+                android:drawablePadding="@dimen/article_dp5"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:layout_margin="@dimen/article_dp5"
+                android:text="后一天"/>
+        <TextView
+                android:id="@+id/article_main_random"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/article_vector_drawable_icon_random"
+                android:textColor="@color/article_color_55ffffff"
+                android:drawablePadding="@dimen/article_dp5"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:layout_margin="@dimen/article_dp5"
+                android:text="随机"/>
+    </LinearLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>
