@@ -5,4 +5,47 @@
 
     <style name="ArticleAppThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
     </style>
+
+    <style name="ArticleTitleTextStyleSmaller">
+        <item name="android:textSize">@dimen/article_text_size_16</item>
+        <item name="android:textColor">@color/article_color_000000</item>
+    </style>
+
+    <style name="ArticleTitleTextStyleNormal" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/article_text_size_20</item>
+        <item name="android:textColor">@color/article_color_000000</item>
+    </style>
+
+    <style name="ArticleTitleTextStyleBigger" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/article_text_size_30</item>
+        <item name="android:textColor">@color/article_color_000000</item>
+    </style>
+
+
+    <style name="ArticleAuthorTextStyleBigger" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/article_text_size_16</item>
+    </style>
+
+    <style name="ArticleAuthorTextStyleNormal" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/article_text_size_12</item>
+    </style>
+
+    <style name="ArticleAuthorTextStyleSmaller" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/article_text_size_10</item>
+    </style>
+
+    <style name="ArticleContentTextStyleBigger" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/article_text_size_25</item>
+        <item name="android:textColor">@color/article_color_000000</item>
+    </style>
+
+    <style name="ArticleContentTextStyleNormal" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/article_text_size_16</item>
+        <item name="android:textColor">@color/article_color_000000</item>
+    </style>
+
+    <style name="ArticleContentTextStyleSmaller" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/article_text_size_12</item>
+        <item name="android:textColor">@color/article_color_000000</item>
+    </style>
 </resources>
