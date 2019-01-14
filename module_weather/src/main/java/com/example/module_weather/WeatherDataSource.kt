@@ -1,5 +1,6 @@
 package com.example.module_weather
 
+import com.example.commonservice.ApiManager
 import com.example.commonservice.weather.ResponseWeatherMsg
 import com.example.module_weather.entity.weather.ResponseWeatherData
 import io.reactivex.Observable

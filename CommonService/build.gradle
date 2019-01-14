@@ -28,9 +28,8 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation Deps.kotlin_stdlib
-    implementation Deps.appcompat_v7
-    implementation Deps.rxjava2
+    api project(":CommonSDK")
+
     implementation Deps.retrofit
 
     testImplementation Deps.junit

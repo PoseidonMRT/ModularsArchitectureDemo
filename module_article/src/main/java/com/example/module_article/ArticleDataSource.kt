@@ -1,6 +1,7 @@
 package com.example.module_article
 
 import android.util.Log
+import com.example.commonservice.ApiManager
 import com.example.commonservice.article.ResponseArticle
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -16,7 +17,7 @@ class ArticleDataSource {
 
     fun loadTodayArticle(dev:Int): Observable<ResponseArticle> {
         Log.e("TZB","load article in datasource")
-        return ArticleApiManager.instance
+        return ApiManager.instance
             .getIArticle()
             .loadTodayArticle(dev)
             .subscribeOn(Schedulers.io())
@@ -24,7 +25,7 @@ class ArticleDataSource {
     }
 
     fun loadArticleDate(dev:Int,date:String):Observable<ResponseArticle>{
-        return ArticleApiManager.instance
+        return ApiManager.instance
             .getIArticle()
             .loadArticleDate(dev,date)
             .subscribeOn(Schedulers.io())
@@ -32,7 +33,7 @@ class ArticleDataSource {
     }
 
     fun loadArticleRandom(dev:Int):Observable<ResponseArticle>{
-        return ArticleApiManager.instance
+        return ApiManager.instance
             .getIArticle()
             .loadArticleRandom(dev)
             .subscribeOn(Schedulers.io())

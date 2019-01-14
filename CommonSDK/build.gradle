@@ -26,11 +26,12 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation Deps.kotlin_stdlib
+    api Deps.kotlin_stdlib
 
-    implementation Deps.appcompat_v7
+    api Deps.appcompat_v7
+    api Deps.rxjava2
+
     implementation Deps.okHttp
-    implementation Deps.rxjava2
     implementation Deps.convert_gson
     implementation Deps.adapter_rxjava
 

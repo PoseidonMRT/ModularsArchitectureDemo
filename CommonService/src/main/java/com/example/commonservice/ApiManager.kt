@@ -1,6 +1,7 @@
-package com.example.module_weather
+package com.example.commonservice
 
 import com.example.commonsdk.http.RetrofitInstance
+import com.example.commonservice.article.ArticleService
 import com.example.commonservice.weather.WeatherService
 
 /**
@@ -9,11 +10,17 @@ import com.example.commonservice.weather.WeatherService
  * @description
  * @since 1.0.0
  */
-val url = "https://www.apiopen.top/"
+val article_url = "http://interface.meiriyiwen.com/article/"
+val weather_url = "https://www.apiopen.top/"
 
 class ApiManager private constructor() {
 
-    private var iWeather: WeatherService = build(url, WeatherService::class.java)
+    private var iArticleService: ArticleService = build(article_url, ArticleService::class.java)
+    private var iWeather: WeatherService = build(weather_url, WeatherService::class.java)
+
+    fun getIArticle(): ArticleService {
+        return iArticleService
+    }
 
     fun getIWeather(): WeatherService {
         return iWeather

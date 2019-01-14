@@ -60,11 +60,8 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation project(":CommonSDK")
     implementation project(":CommonService")
 
-    implementation Deps.kotlin_stdlib
-    implementation Deps.appcompat_v7
     implementation Deps.constraint_layout
 
     implementation Deps.retrofit
