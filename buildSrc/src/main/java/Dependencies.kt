@@ -35,6 +35,8 @@ object Versions{
     val retrofit = "2.5.0"
     val okHttp = "3.12.0"
     val gson = "2.8.5"
+
+    val leakCanary = "1.6.3"
 }
 
 object Deps{
@@ -76,6 +78,10 @@ object Deps{
     val okHttp = "com.squareup.okhttp3:okhttp:${Versions.okHttp}"
     val okHttp_interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttp}"
     val gson = "com.google.code.gson:gson:${Versions.gson}"
+
+    val debugLeakCanary = "com.squareup.leakcanary:leakcanary-android:${Versions.leakCanary}"
+    val releaseLeakCanary = "com.squareup.leakcanary:leakcanary-android-no-op:${Versions.leakCanary}"
+    val fragmentLeakCanary = "com.squareup.leakcanary:leakcanary-support-fragment:${Versions.leakCanary}"
 }
 
 object ModuleBuildType{
