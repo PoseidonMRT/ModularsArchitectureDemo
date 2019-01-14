@@ -31,9 +31,6 @@ dependencies {
     api project(":CommonSDK")
 
     implementation Deps.retrofit
-    api Deps.debugLeakCanary
-    api Deps.releaseLeakCanary
-    api Deps.fragmentLeakCanary
 
     testImplementation Deps.junit
     androidTestImplementation Deps.test_runner

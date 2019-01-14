@@ -19,7 +19,7 @@ class RetrofitInstance {
     private val READ_TIMEOUT = 30L
     private val WRITE_TIMEOUT = 30L
 
-    private lateinit var okHttpClient: OkHttpClient
+    private var okHttpClient: OkHttpClient
 
     init {
         val builder = OkHttpClient.Builder()

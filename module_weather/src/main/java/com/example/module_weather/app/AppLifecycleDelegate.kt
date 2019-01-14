@@ -6,7 +6,6 @@ import android.util.Log
 import com.alibaba.android.arouter.launcher.ARouter
 import com.example.commonsdk.app.ApplicationLifecycleDelegate
 import com.example.module_weather.BuildConfig
-import com.squareup.leakcanary.LeakCanary
 
 /**
  * @author
@@ -27,18 +26,9 @@ class AppLifecycleDelegate: ApplicationLifecycleDelegate {
             ARouter.openLog()
         }
         ARouter.init(application)
-
-        initLeakCanary(application)
     }
 
     override fun onTerminate() {
         Log.e("TZB","Application onTerminate")
-    }
-
-    private fun initLeakCanary(application: Application){
-        if (LeakCanary.isInAnalyzerProcess(application)){
-            return
-        }
-        LeakCanary.install(application)
     }
 }

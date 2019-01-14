@@ -5,7 +5,6 @@ import android.content.Context
 import com.alibaba.android.arouter.launcher.ARouter
 import com.example.administrator.modularsarchitecturedemo.BuildConfig
 import com.example.commonsdk.app.ApplicationLifecycleDelegate
-import com.squareup.leakcanary.LeakCanary
 
 /**
  * @author
@@ -25,17 +24,9 @@ class AppLifecycleDelegate: ApplicationLifecycleDelegate {
             ARouter.openLog()
         }
         ARouter.init(application)
-        initLeakCanary(application)
     }
 
     override fun onTerminate() {
 
-    }
-
-    private fun initLeakCanary(application: Application){
-        if (LeakCanary.isInAnalyzerProcess(application)){
-            return
-        }
-        LeakCanary.install(application)
     }
 }

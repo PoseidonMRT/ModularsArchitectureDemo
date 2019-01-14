@@ -54,10 +54,6 @@ dependencies {
 
     implementation Deps.lottie
 
-    implementation Deps.debugLeakCanary
-    implementation Deps.releaseLeakCanary
-    implementation Deps.fragmentLeakCanary
-
     testImplementation Deps.junit
     androidTestImplementation Deps.test_runner
     androidTestImplementation Deps.espresso
