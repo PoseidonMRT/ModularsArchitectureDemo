@@ -23,8 +23,8 @@ in this project,CommonSDK and CommonService modules as a base library for other 
 
 ## Thanks
 
-Blog:https://www.jianshu.com/p/e6f072839282 provide weather api service
-Project:https://github.com/jokermonn/-Api provide article api service
+- Blog:https://www.jianshu.com/p/e6f072839282 provide weather api service
+- Project:https://github.com/jokermonn/-Api provide article api service
 
 ## License
 
