@@ -21,6 +21,10 @@ whether build single module is depending on the module `buildSrc/dependencies.kt
 
 in this project,CommonSDK and CommonService modules as a base library for other logic modules,and CommonService module also rely on CommonSDK modules.when we need make CommonSDK modules be available for modules which rely on CommonService,in CommonService's build.gradle files we must use `api project(":CommonSDK")` instead of `implementation project(":CommonSDK")`,the `implementation` keyword make dependencies be private parts for CommonService modules
 
+## Thanks
+
+Blog:https://www.jianshu.com/p/e6f072839282 provide weather api service
+Project:https://github.com/jokermonn/-Api provide article api service
 
 ## License
 
